@@ -4,9 +4,9 @@ import { NavLink } from "react-router-dom";
 import BackDrop from "../../UI/BackDrop/BackDrop";
 
 const links = [
-    {to: '/', label: 'Список', exact: true},
-    {to: '/auth', label: 'Авторизация', exact: false},
-    {to: '/quiz-creator', label: 'Создать тест', exact: false},
+    {to: '/', label: 'Список'},
+    {to: '/auth', label: 'Авторизация'},
+    {to: '/quiz-creator', label: 'Создать тест'},
 ]
 class Drawer extends Component {
 
@@ -17,11 +17,14 @@ class Drawer extends Component {
     renderLinks() {
         return links.map((link, index) => {
             return (
-                <li key = {index}>
+                <li key = {index} >
                    <NavLink
                     to = {link.to}
-                    exact = {link.exact}
-                    activeClassName = {classes.active}
+                    
+                    className={({ isActive}) =>
+    isActive ? classes.active : "" // не очевидная говнина
+  }
+                    //activeClassName = {classes.active}
                     onClick = {this.clickHandler}
                    >
                     {link.label}
