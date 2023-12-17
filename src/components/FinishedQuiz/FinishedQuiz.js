@@ -17,8 +17,7 @@ const FinishedQuiz = props => {
             <ul>
                 { props.quiz.map((quizItem, index) => {
                     const cls = [
-                        'fa',
-                        props.results[quizItem.id] === 'error' ? 'fa-times' : 'fa-check',
+                        'material-symbols-outlined',
                        classes[props.results[quizItem.id]] // должен добавлять цвет, но этого не происходит на первом эл-те
                     ]
 
@@ -27,7 +26,19 @@ const FinishedQuiz = props => {
                         >
                             <syrong>{index +1}</syrong>.&nbsp;
                             {quizItem.question}
-                            <i className={cls.join(' ')}/>
+
+                            <div className={cls.join(' ')}>
+                                {
+                                    props.results[quizItem.id] === 'error' 
+                                    ? <span class="material-symbols-outlined"
+                            
+                                        >close</span>
+                                    : <span class="material-symbols-outlined"
+                            
+                                    >done</span>
+                                }
+                                
+                            </div>
                         </li>
                     )
 
