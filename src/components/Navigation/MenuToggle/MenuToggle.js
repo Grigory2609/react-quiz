@@ -13,8 +13,8 @@ const MenuToggle = (props) => {
     onClick={props.onToggle}>
         {
             props.isOpen
-            ? <span class="material-symbols-outlined">close</span>
-            : <span class="material-symbols-outlined">menu</span>
+            ? <span className={classes.cls}>close</span>
+            : <span className={classes.cls}>menu</span>
         }
       
     </div>

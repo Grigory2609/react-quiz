@@ -24,16 +24,16 @@ const FinishedQuiz = props => {
                     return (
                         <li key ={index}
                         >
-                            <syrong>{index +1}</syrong>.&nbsp;
+                            <strong>{index +1}</strong>.&nbsp;
                             {quizItem.question}
 
                             <div className={cls.join(' ')}>
                                 {
                                     props.results[quizItem.id] === 'error' 
-                                    ? <span class="material-symbols-outlined"
+                                    ? <span className={cls.join(' ')}
                             
                                         >close</span>
-                                    : <span class="material-symbols-outlined"
+                                    : <span className={cls.join(' ')}
                             
                                     >done</span>
                                 }
